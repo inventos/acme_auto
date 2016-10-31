@@ -26,7 +26,8 @@ if [[ -z $DOMAIN ]]; then errcho "No domain given" && exit 1; fi
 
 LOCKDIR="/tmp/le-auto.sh-lock-$ACCOUNT"
 # TODO: make options to intialize all the dirs etc.
-PREFIX="/home/$ACCOUNT/letsencrypt"
+HOMEDIR=`eval echo ~$ACCOUNT`
+PREFIX="$HOMEDIR/letsencrypt"
 # TODO: download intermediate certificate from Let's Encrypt site
 INTERMEDIATE_CRT_PATH="/etc/letsencrypt/lets-encrypt-x3-cross-signed.pem"
 
